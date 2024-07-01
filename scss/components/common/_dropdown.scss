@@ -1,0 +1,108 @@
+.dropdown {
+  border-radius: 4px;
+  box-shadow: 0px 1px 4px 0 rgba(0, 0, 0, 0.08);
+  border: solid 1px $border-color;
+  background-color: $label-background-color;
+  margin-bottom: 30px;
+}
+.icon-left {
+  .dropdown-list & {
+    &:after {
+      display: none;
+    }
+  }
+}
+.icon-left,
+.icon-right {
+  display: block;
+  margin-right: 10px;
+  &:before,
+  &:after {
+    .is-selected &,
+    .dropdown-option:hover & {
+      display: block;
+      color: $focus-color;
+    }
+  }
+}
+.search-on-drop {
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: 0 0 1px 1px $focus-color;
+  }
+}
+.dropdown-option {
+  position: relative;
+  padding: 0 10px 0 20px;
+  color: $main-font-color;
+  display: flex;
+  font-weight: 600;
+  line-height: 34px;
+  cursor: pointer;
+  transition: all $transition;
+  border-bottom: solid 1px $border-color;
+  &:hover {
+    color: $focus-color;
+    background-color: $border-color;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  .has-img & {
+    padding: 4px;
+    line-height: 30px;
+  }
+  .has-icon & {
+    padding-left: 35px;
+    &:after {
+      top: 30%;
+      transform: translateY(-30%);
+    }
+  }
+}
+.option-title {
+  .is-selected & {
+    color: $focus-color;
+  }
+}
+.last-option {
+  color: $sub-titles-color;
+  border-top: solid 1px $border-color;
+}
+.search-on-drop {
+  margin: 5px;
+}
+.select-check {
+  display: none;
+}
+.multi-select-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.select-check:checked + .multi-select-label {
+  transition: $transition;
+  color: $focus-color;
+}
+.icon-done {
+  &:after {
+    .multi-select-label & {
+      opacity: 0;
+    }
+    .select-check:checked + .multi-select-label & {
+      opacity: 1;
+      color: $focus-color;
+    }
+  }
+}
+.select-label-text {
+  font-family: SourceSansPro, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: $main-font-color;
+  .select-check:checked + .multi-select-label & {
+    color: $focus-color;
+  }
+}

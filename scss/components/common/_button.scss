@@ -1,0 +1,279 @@
+%btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 85px;
+  min-height: 36px;
+  padding: 10px 20px;
+  font-family: SourceSansPro, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  white-space: nowrap;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+
+  &:disabled,
+  &.disabled {
+    color: $disabled-font-color;
+    background-color: $button-disabled-background-color;
+    border-color: $button--disabled-border-color;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+.btn {
+  @extend %btn;
+  color: $main-font-color;
+  margin: 10px 0;
+  border: 1px solid $main-background-color;
+  &:hover {
+    transition: all $transition;
+  }
+  .has-dropdown & {
+    border-radius: 0;
+    border: none;
+    margin: 0;
+  }
+  .tables & {
+    margin: 0;
+    margin-right: 10px;
+  }
+}
+
+.loading-button {
+  position: relative;
+}
+.icon-spinner3 {
+  position: absolute;
+  left: 35%;
+  top: 40%;
+  display: block;
+  width: 16px;
+  height: 16px;
+  &:before {
+    .loading-button & {
+      top: 0;
+      left: 0;
+      font-size: 26px;
+    }
+  }
+}
+
+// ___GREEN_BUTTON_________________________
+.default-green-state {
+  background-image: linear-gradient(to top, #34aa44, #39b54a);
+  &:hover {
+    background-image: linear-gradient(to top, #1e930b, #1e9d09);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #1a740b, #187a08);
+  }
+}
+.hover-green-state {
+  @extend .default-green-state;
+  @extend .default-green-state:hover;
+}
+.focus-green-state {
+  @extend .default-green-state;
+  @extend .default-green-state:focus;
+}
+
+// ___BLUE_BUTTON_________________________
+.default-blue-state {
+  background-image: linear-gradient(to top, #1991eb, #2ca0f7);
+  &:hover {
+    background-image: linear-gradient(to top, #2184d0, #1584d7);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #196cab, #0c73c0);
+  }
+}
+.hover-blue-state {
+  @extend .default-blue-state;
+  @extend .default-blue-state:hover;
+}
+.focus-blue-state {
+  @extend .default-blue-state;
+  @extend .default-blue-state:focus;
+}
+
+// ___DARK_BUTTON_________________________
+.default-dark-state {
+  background-color: $label-background-color;
+  &:hover {
+    background-color: #2a3546;
+  }
+  &:focus {
+    background-color: #323e50;
+  }
+}
+.hover-dark-state {
+  @extend .default-dark-state;
+  @extend .default-dark-state:hover;
+}
+.focus-dark-state {
+  @extend .default-dark-state;
+  @extend .default-dark-state:focus;
+}
+
+// ___VIOLET_BUTTON_________________________
+.default-violet-state {
+  background-image: linear-gradient(to top, #6b47da, #8261e6);
+
+  &:hover {
+    background-image: linear-gradient(to top, #613cd0, #7251d5);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #5632c4, #714edc);
+  }
+}
+.hover-violet-state {
+  @extend .default-violet-state;
+  @extend .default-violet-state:hover;
+}
+.focus-violet-state {
+  @extend .default-violet-state;
+  @extend .default-violet-state:focus;
+}
+
+// ___RED_BUTTON_________________________
+.default-red-state {
+  background-image: linear-gradient(to top, #dd171e, #f85258);
+
+  &:hover {
+    background-image: linear-gradient(to top, #d1171e, #f14c52);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #be0d14, #ec4349);
+  }
+}
+.hover-red-state {
+  @extend .default-red-state;
+  @extend .default-red-state:hover;
+}
+.focus-red-state {
+  @extend .default-red-state;
+  @extend .default-red-state:focus;
+}
+
+// ___GRAY_BUTTON_________________________
+.default-gray-state {
+  background-image: linear-gradient(to top, #475566, #516072);
+
+  &:hover {
+    background-image: linear-gradient(to top, #425061, #475667);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #344150, #3d4b5c);
+  }
+}
+.hover-gray-state {
+  @extend .default-gray-state;
+  @extend .default-gray-state:hover;
+}
+.focus-gray-state {
+  @extend .default-gray-state;
+  @extend .default-gray-state:focus;
+}
+
+// ___ORANGE_BUTTON_________________________
+.default-orange-state {
+  background-image: linear-gradient(to top, #f76d1c, #f7971c);
+
+  &:hover {
+    background-image: linear-gradient(to top, #ea6211, #f0921a);
+  }
+  &:focus {
+    background-image: linear-gradient(to top, #e65a08, #e98a12);
+  }
+}
+.hover-orange-state {
+  @extend .default-orange-state;
+  @extend .default-orange-state:hover;
+}
+.focus-orange-state {
+  @extend .default-orange-state;
+  @extend .default-orange-state:focus;
+}
+
+// __BUTTONS_WITH_DROPDOWN___________
+
+.btn-group {
+  display: flex;
+  position: relative;
+}
+.has-dropdown {
+  border: 1px solid $button--disabled-border-color;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+.dropdown-toggle {
+  .has-dropdown & {
+    min-width: 24px;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+  }
+  &:hover {
+    @extend .default-dark-state:hover;
+  }
+  &:focus {
+    @extend .default-dark-state:focus;
+  }
+}
+.dropdown-button-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  border: 1px solid $button--disabled-border-color;
+  background-color: $main-background-color;
+  transition: $transition;
+  display: none;
+  .dropdown-toggle:hover &,
+  .is-open & {
+    display: block;
+    z-index: 1;
+  }
+}
+.dropdown-item {
+  display: block;
+  padding: 10px;
+  &:hover {
+    background-color: $button-disabled-background-color;
+  }
+}
+
+// _TYPE_SUBMIT___________
+// _TYPE_RESET___________
+.submit,
+.reset {
+  position: relative;
+}
+.icon-submit,
+.icon-reset {
+  margin-right: 15px;
+  font-size: 16px;
+  &::before {
+    color: $main-font-color;
+    .disabled & {
+      color: $disabled-font-color;
+    }
+  }
+}
+// ____________
+
+.btn-control {
+  position: relative;
+  background: none;
+  border: none;
+  min-width: 25px;
+  &:last-child {
+    margin: 0;
+  }
+}

@@ -1,0 +1,52 @@
+.notifications {
+  flex-basis: 45%;
+  margin-right: 45px;
+}
+.notifications-list {
+  width: 100%;
+}
+.notifications-item {
+  margin-bottom: 15px;
+}
+
+.notification {
+  display: flex;
+  width: 100%;
+  padding: 10px 30px 10px 40px;
+  position: relative;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all $transition;
+  transition-delay: 1s;
+  .notification-success & {
+    background-color: $success-color;
+  }
+  .notification-info & {
+    background-color: $info-color;
+  }
+  .notification-warning & {
+    background-color: $warning-color;
+  }
+  .notification-error & {
+    background-color: $error-color;
+  }
+}
+
+.icon-information-solid {
+  &:before {
+    .notifications-item & {
+      left: 15px;
+      color: $main-font-color;
+    }
+  }
+}
+.icon-cross {
+  cursor: pointer;
+  &:after {
+    .notifications-item & {
+      color: #eff3f6;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+}

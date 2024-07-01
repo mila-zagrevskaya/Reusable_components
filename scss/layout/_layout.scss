@@ -1,0 +1,90 @@
+.page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $main-background-color;
+}
+.page-content {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0%;
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0%;
+  background-color: $main-background-color;
+  // padding: $indent-standard $indent-content 0;
+  @media (min-width: $breakpoint-xxs) {
+    padding: $indent-standard 5px 0;
+  }
+  @media (min-width: $breakpoint-xs) {
+    padding: $indent-standard 10px 0;
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding: $indent-standard 30px 0;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: $indent-standard 40px 0;
+  }
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+  // padding-right: $indent-standard;
+  // padding-left: $indent-standard;
+  @media (min-width: $breakpoint-xxs) {
+    padding: 0 10px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    .footer & {
+      padding: 0 30px;
+    }
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: 0 40px;
+    .footer & {
+      padding: 0 40px;
+    }
+  }
+}
+.container-fluid {
+  @extend .container;
+  max-width: 100%;
+}
+.heading {
+  margin-bottom: 45px;
+}
+.fields-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  transition: $transition;
+  @media (min-width: $breakpoint-xxs) {
+    flex-wrap: wrap;
+  }
+}
+.text-inputs,
+.buttons,
+.group-col {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+.buttons {
+  margin-right: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+}
+.group-col {
+  margin-bottom: 12px;
+  position: relative;
+  min-width: 245px;
+  max-width: 260px;
+}
+.dropdowns-group {
+  margin-bottom: 0;
+}

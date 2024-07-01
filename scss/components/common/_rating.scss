@@ -1,0 +1,19 @@
+.star-rating-row {
+  padding: 10px 0;
+}
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  position: relative;
+}
+.star-rating-label {
+  margin-right: 3px;
+  cursor: pointer;
+}
+.icon-star-full:hover:before,
+.star-rating-control:hover ~ .icon-star-full:before,
+.star-rating-control:checked ~ .icon-star-full:before {
+  color: #f8cf5d;
+  transition: all $transition;
+}

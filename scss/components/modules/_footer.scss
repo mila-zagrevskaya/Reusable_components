@@ -1,0 +1,22 @@
+.footer {
+  flex: 0 0 auto;
+  background: $pale-grey;
+}
+
+.footer-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $secondary-background-color;
+}
+
+.footer-row {
+  height: 50px;
+  &:last-child {
+    flex: 0 0 auto;
+    min-height: 30px;
+    background-color: $black;
+    color: $white;
+  }
+}

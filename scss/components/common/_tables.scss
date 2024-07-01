@@ -1,0 +1,132 @@
+.tables {
+  background: none;
+  width: 100%;
+}
+.table-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  @media (min-width: $breakpoint-xxs) {
+    flex-wrap: wrap;
+  }
+}
+.table-item {
+  flex-basis: 49%;
+  margin: 0 0 30px 0;
+  &:nth-child(2n+1)  {
+    margin-right: 30px;
+  }
+  .full-width-table & {
+    margin: 0 0 30px 0;
+  }
+}
+
+.table {
+  border-radius: 4px;
+  border: solid 1px $border-color;
+  background-color: $label-background-color;
+  border-collapse: collapse;
+  width: 100%;
+  min-height: 100%;
+}
+.table-row {
+  border-bottom: solid 1px $border-color;
+  text-align-last: left;
+  transition: $transition;
+  &:hover {
+    background-color: $input-background-color;
+  }
+}
+.table-head {
+  color: $sub-titles-color;
+}
+.table-cell {
+  padding: 10px 25px;
+  border-spacing: 0;
+  .table-head & {
+    line-height: 2.14;
+    cursor: pointer;
+  }
+  @media (min-width: $breakpoint-xxs) {
+    padding: 10px 20px;
+  }
+  @media (min-width: $breakpoint-lg) {
+    padding: 10px 25px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: 10px 30px;
+  }
+}
+.col-title {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.filer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  opacity: 0;
+  transition: $transition;
+  .is-sorted &,
+  .table-cell:hover & {
+    opacity: 1;
+  }
+}
+.filter-button {
+  background: none;
+  border: none;
+  width: 16px;
+  height: 11px;
+}
+.cell-value {
+  display: block;
+  font-weight: 600;
+  color: $main-font-color;
+  line-height: 30px;
+  white-space: nowrap;
+  transition: $transition;
+  .has-checkbox:hover & {
+    color: $info-color;
+  }
+}
+.marking {
+  color: $sub-titles-color;
+  font-weight: 400;
+}
+.cell-description {
+  display: block;
+  font-size: 12px;
+  line-height: 12px;
+  color: $sub-titles-color;
+  .invalid & {
+    color: $error-color;
+  }
+  .positive & {
+    color: $success-color;
+  }
+}
+.flex-cell {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cell-image {
+  margin-right: 20px;
+}
+.control-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+.app-avatar {
+  border-radius: 11px;
+  width: 42px;
+  height: 42px;
+  margin-right: 20px;
+  overflow: hidden;
+}
+.avatar-image {
+  display: block;
+  width: 100%;
+}

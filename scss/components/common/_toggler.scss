@@ -1,0 +1,75 @@
+.switch {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  .tables & {
+    margin-bottom: 0;
+  }
+}
+.filter-title {
+  display: inline-block;
+  margin: 0px 5px 0 20px;
+  font-weight: 400;
+  .disabled-switch & {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+/* The slider */
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid $border-color;
+  transition: all $transition;
+  background-color: $main-background-color;
+  .disabled-switch & {
+    cursor: default;
+  }
+}
+.switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 3px;
+  bottom: 2px;
+  background-color: white;
+  transition: all $transition;
+  .disabled-switch & {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+.switch-control:checked + .switch-slider {
+  background-color: $success-color;
+  .disabled-switch & {
+    background-color: $main-background-color;
+  }
+}
+.switch-control:focus + .switch-slider {
+  box-shadow: 0 0 1px $success-color;
+  font-weight: 600;
+}
+
+.switch-control:checked + .switch-slider:before {
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.switch-slider.round {
+  border-radius: 34px;
+}
+
+.switch-slider.round:before {
+  border-radius: 50%;
+}

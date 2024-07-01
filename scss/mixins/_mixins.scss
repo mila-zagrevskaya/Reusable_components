@@ -1,0 +1,35 @@
+@mixin col-width($size) {
+  @if $size==null {
+    @for $i from 1 through ($col-count) {
+      .col-#{$i} {
+        flex: 0 1 $i * 100% / $col-count;
+        width: $i * 100% / $col-count;
+        padding: 0 $indent-standard;
+      }
+    }
+  } @else {
+    @for $i from 1 through ($col-count) {
+      .col-#{$size}-#{$i} {
+        flex: 0 1 $i * 100% / $col-count;
+        width: $i * 100% / $col-count;
+        padding: 0 $indent-standard;
+      }
+    }
+  }
+}
+
+@mixin col-offset($size) {
+  @if $size==null {
+    @for $i from 1 through ($col-count) {
+      .col-offset-#{$i} {
+        margin-right: $i * 100% / $col-count;
+      }
+    }
+  } @else {
+    @for $i from 1 through ($col-count) {
+      .col-offset-#{$size}-#{$i} {
+        margin-right: $i * 100% / $col-count;
+      }
+    }
+  }
+}

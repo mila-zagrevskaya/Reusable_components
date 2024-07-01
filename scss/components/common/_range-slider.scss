@@ -1,0 +1,87 @@
+.range-slider-list {
+  padding-top: 30px;
+  margin-right: 45px;
+}
+.slider-item {
+  margin-bottom: 35px;
+}
+.slider {
+  position: relative;
+}
+.slider-content {
+  width: 245px;
+  height: 4px;
+  border-radius: 2px;
+  background: $border-color;
+}
+.slider-bar {
+  position: absolute;
+  left: 116px;
+  width: 34px;
+  height: 4px;
+  background: #1991eb;
+  .has-scale & {
+    width: 75px;
+    left: 134px;
+  }
+  .range & {
+    left: 0;
+    width: 116px;
+  }
+}
+
+.control-item {
+  position: relative;
+  cursor: pointer;
+  background: #555;
+  width: 8px;
+  height: 16px;
+  background-image: linear-gradient(to top, #f2f4f7, #feffff);
+  position: absolute;
+  color: white;
+  user-select: none;
+}
+.left-control {
+  left: 0;
+  top: -7px;
+  border-radius: 4px 0 0 4px;
+}
+.right-control {
+  left: 100%;
+  top: -7px;
+  border-radius: 0 4px 4px 0;
+}
+.range-control {
+  left: 100%;
+  top: -7px;
+  border-radius: 4px;
+  width: 16px;
+}
+
+.start-range,
+.end-range {
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  background-color: $dark-mode-color;
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-weight: 600;
+  opacity: 0;
+  transition: all $transition;
+
+  .has-value &,
+  .control-item:hover & {
+    opacity: 1;
+  }
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 0;
+  margin-bottom: 10px;
+}
+.scale-item {
+  color: rgba(127, 143, 164, 0.5);
+}

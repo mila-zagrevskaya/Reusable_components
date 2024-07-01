@@ -1,0 +1,165 @@
+.select {
+  position: relative;
+  user-select: none;
+  margin-bottom: 10px;
+  .table-cell & {
+    margin: 0;
+  }
+  .control-cell & {
+    margin-right: 10px;
+  }
+}
+.select-toggler {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.select-trigger {
+  position: relative;
+  display: flex;
+  color: $main-font-color;
+  width: 100%;
+  font-size: 14px;
+  padding: 12px 30px 12px 15px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  background-color: $input-border-color;
+  cursor: pointer;
+  &:hover {
+    background-color: $input-hover-color;
+  }
+  .has-img & {
+    padding: 4px;
+    line-height: 30px;
+  }
+  .has-label & {
+    border: none;
+    margin-bottom: 20px;
+  }
+  .has-icon & {
+    padding: 4px;
+    line-height: 30px;
+    padding-left: 35px;
+    &:before {
+      top: 30%;
+      transform: translateY(-30%);
+    }
+  }
+  .user-menu & {
+    background: none;
+    border: none;
+  }
+  .table-cell & {
+    padding: 10px 30px 10px 15px;
+  }
+}
+.select-list {
+  position: absolute;
+  top: 41px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid $border-color;
+  background: $label-background-color;
+  transition: all $transition;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+  .user-menu & {
+    top: 50px;
+    min-width: 145px;
+  }
+  .has-label & {
+    top: 60px;
+  }
+  .is-open & {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+.select-option {
+  position: relative;
+  padding: 10px 20px;
+  color: $main-font-color;
+  line-height: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition;
+}
+.select-option:hover {
+  cursor: pointer;
+  background-color: $input-hover-color;
+  color: $main-font-color;
+}
+.is-selected {
+  color: $focus-color;
+  background-color: $border-color;
+  &:after {
+    color: $main-font-color;
+  }
+}
+
+.placeholder {
+  color: $sub-titles-color;
+}
+.focused {
+  font-weight: 600;
+  color: $main-font-color;
+  border: solid 1px $focus-color;
+}
+.disabled {
+  border: solid 1px #313d4f;
+  background-color: $dark-grey2;
+  color: $disabled-font-color;
+}
+.icon-keyboard-arrow-down {
+  .select & {
+    margin-left: 10px;
+    &:after {
+      padding-left: 5px;
+    }
+  }
+}
+.select-label {
+  margin-bottom: 10px;
+  color: $sub-titles-color;
+}
+.user-avatar {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 11px;
+  overflow: hidden;
+  .user-menu & {
+    width: 40px;
+    height: 40px;
+  }
+}
+.avatar-image {
+  display: block;
+  width: 100%;
+}
+.album-avatar {
+  width: 40px;
+  border-radius: 5px;
+  margin-right: 11px;
+  overflow: hidden;
+}
+.album-image {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.user-menu {
+  background: none;
+  border: none;
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 145px;
+}

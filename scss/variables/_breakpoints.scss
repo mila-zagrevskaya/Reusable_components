@@ -1,0 +1,10 @@
+$breakpoint-xxs: 320px;
+$breakpoint-xs: 375px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+$breakpoint-xs-max: $breakpoint-sm - 1px;
+$breakpoint-sm-max: $breakpoint-md - 1px;
+$breakpoint-md-max: $breakpoint-lg - 1px;
+$breakpoint-lg-max: $breakpoint-xl - 1px;

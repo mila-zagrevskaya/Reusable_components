@@ -1,0 +1,103 @@
+.checkbox {
+  margin-bottom: 15px;
+  .tables & {
+    margin-bottom: 0;
+  }
+}
+.checkbox-control {
+  display: none;
+}
+.checkbox-label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: solid 1px $border-color;
+  background-color: $main-background-color;
+  cursor: pointer;
+  &:focus {
+    border: solid 1px $focus-color;
+  }
+  .disabled-check & {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+  }
+}
+.checked-icon {
+  &:after {
+    .checkbox-label & {
+      top: 9px;
+      right: -3px;
+      font-size: 12px;
+      opacity: 0;
+      transition: all $transition;
+    }
+    .indeterminate & {
+      content: $icon-minus;
+      top: 9px;
+    }
+    .disabled-check & {
+      border: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+.checkbox-control:checked + .checkbox-label,
+.checkbox-control:hover + .checkbox-label {
+  border: solid 1px $success-color;
+  .table & {
+    background-color: $success-color;
+  }
+  .checked-icon {
+    &:after {
+      opacity: 1;
+      color: $success-color;
+      transition: all $transition;
+      .table & {
+        color: $main-font-color;
+        font-weight: 600;
+      }
+    }
+  }
+  .dis-selected-check & {
+    border: solid 1px $border-color;
+    color: rgba(255, 255, 255, 0.5);
+    .checked-icon {
+      &:after {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+.checkbox-control:hover + .disabled-check-label {
+  border: solid 1px $border-color;
+  color: rgba(255, 255, 255, 0.5);
+  .checked-icon {
+    &:after {
+      opacity: 0;
+    }
+  }
+}
+.checkbox-label-text {
+  padding-left: 30px;
+  min-width: 160px;
+  transition: $transition;
+  text-shadow: 0 0 1px $disabled-font-color;
+  .checkbox-control:checked + .checkbox-label &,
+  .checkbox:hover & {
+    text-shadow: 0 0 1px $main-font-color;
+  }
+  .disabled-check & {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .checkbox:hover .disabled-check-label & {
+    text-shadow: none;
+  }
+  .dis-selected-check & {
+    text-shadow: 0 0 1px $disabled-font-color;
+  }
+}

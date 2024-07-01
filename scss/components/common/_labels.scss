@@ -1,0 +1,44 @@
+.status-list {
+  display: flex;
+  margin-top: 70px;
+}
+
+.status-item {
+  margin: 0 10px 10px 0;
+}
+.status {
+  padding: 5px 10px;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  .table-cell & {
+    line-height: 14px;
+  }
+}
+.success-status {
+  background-color: $success-color;
+}
+.info-status {
+  background-color: $info-color;
+}
+.error-status {
+  background-color: $error-color;
+}
+.disabled-status {
+  background-color: $pale-grey;
+}
+.warning-status {
+  background-color: $warning-color;
+}
+.lite-status {
+  background-color: $pale;
+  color: #89909b;
+}
+.default-status {
+  background-color: $input-background-color;
+}

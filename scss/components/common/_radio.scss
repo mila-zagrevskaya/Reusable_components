@@ -1,0 +1,98 @@
+.radio {
+  margin-bottom: 15px;
+  position: relative;
+}
+.radio-control {
+  position: absolute;
+}
+.radio-label {
+  cursor: pointer;
+  display: block;
+  padding-left: 30px;
+  transition: all $transition;
+  .disabled-radio &,
+  .dis-selected-radio & {
+    cursor: default;
+  }
+}
+.radio-label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  transition: all $transition;
+  .disabled-radio & {
+    cursor: default;
+  }
+}
+.radio-label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: $main-font-color;
+  opacity: 0;
+  transition: all $transition;
+
+  .disabled-radio & {
+    display: none;
+    cursor: default;
+  }
+}
+.radio-control:checked + .radio-label,
+.radio:hover .radio-label {
+  &:before {
+    border: 1px solid $success-color;
+    .dis-selected-radio & {
+      border: 1px solid $disabled-font-color;
+      cursor: default;
+    }
+  }
+  &:after {
+    opacity: 1;
+    .dis-selected-radio & {
+      background-color: $disabled-font-color;
+    }
+    .disabled-radio & {
+      opacity: 0;
+    }
+  }
+}
+.radio:hover .disabled-radio-label {
+  &:before {
+    border: 1px solid $disabled-font-color;
+  }
+}
+
+.radio-label-text {
+  min-width: 160px;
+  text-shadow: none;
+  transition: $transition;
+
+  .radio-control:checked + .radio-label &,
+  .radio:hover & {
+    text-shadow: 0 0 1px $main-font-color;
+  }
+  .disabled-radio & {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+  }
+  .dis-selected-radio & {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+    text-shadow: 0 0 1px $disabled-font-color;
+  }
+  .dis-selected-radio:hover & {
+    text-shadow: 0 0 1px $disabled-font-color;
+  }
+  .radio:hover .disabled-radio-label & {
+    text-shadow: none;
+  }
+}

@@ -1,0 +1,93 @@
+.tabs {
+  flex-basis: 50%;
+  margin-right: 45px;
+}
+.tabs-examples {
+  display: flex;
+  justify-content: space-between;
+  @media(min-width: $breakpoint-xxs) {
+    flex-wrap: wrap;
+  }
+}
+.tabs-group {
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+.tabs-list,
+.options-list {
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  background-color: $label-background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding-bottom: 20px;
+}
+.tabs-item {
+  border-bottom: 1px solid $border-color;
+  flex: 1 1 auto;
+  padding: 0 20px;
+}
+.tabs-link {
+  position: relative;
+  width: 100%;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.19;
+  color: $sub-titles-color;
+  transition: all $transition;
+  padding: 20px 0;
+  &:hover,
+  .active-tab & {
+    color: $main-font-color;
+    transition: all $transition;
+    &:after {
+      content: "";
+      border-bottom: 2px solid $focus-color;
+      transition: all $transition;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+.options-list {
+  padding: 0;
+}
+.options-item {
+  flex: 1 1 auto;
+}
+.options-link {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  white-space: nowrap;
+  color: $main-font-color;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: all $transition;
+  .active-options &,
+  &:hover,
+  &:focus {
+    color: $main-font-color;
+    box-shadow: 0 0 1px 1px $focus-color;
+    border-image-slice: 1;
+    transition: all $transition;
+    background: #1991eb;
+    .second-type-tabs & {
+      color: $main-font-color;
+      background-color: #323e50;
+      box-shadow: 0 0 1px 1px $border-color;
+      background-image: linear-gradient(to top, #323e50, #323e50);
+    }
+  }
+  .second-type-tabs & {
+    color: $sub-titles-color;
+  }
+}
